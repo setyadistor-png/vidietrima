@@ -47,11 +47,11 @@ body::after { bottom: 10%; right: -50px; background: #0072ff; }
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    min-height: 95px;
+    padding: 10px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10%;
     background: rgba(11, 15, 25, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -60,10 +60,32 @@ body::after { bottom: 10%; right: -50px; background: #0072ff; }
 }
 
 .navbar .logo {
-    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 1.2rem;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Gaya khusus untuk gambar logo */
+.nav-logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Efek animasi saat kursor diarahkan ke logo */
+.navbar .logo:hover .nav-logo-img {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
 }
 
 .nav-menu {
@@ -93,7 +115,6 @@ body::after { bottom: 10%; right: -50px; background: #0072ff; }
 
 .color-black {
     color: #000000; 
-    /* Garis tepi putih agar teks hitam tetap terlihat di background gelap */
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
 }
 
@@ -119,7 +140,6 @@ body::after { bottom: 10%; right: -50px; background: #0072ff; }
     letter-spacing: -1px;
 }
 
-/* Teks Collection diubah menjadi warna putih solid */
 .hero h1 .collection-text {
     color: #ffffff;
 }
@@ -226,7 +246,6 @@ body::after { bottom: 10%; right: -50px; background: #0072ff; }
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-/* Label NEW dengan warna teks putih dan background merah */
 .badge-new {
     position: absolute;
     top: 15px;
